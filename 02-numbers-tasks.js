@@ -21,9 +21,10 @@
  *   5, 10 => 50
  *   5, 5  => 25
  */
-function getRectangleArea(width, height) {
-}
 
+const getRectangleArea = (width, height) => width * height
+
+console.log(getRectangleArea(5, 10))
 
 /**
  * Returns a circumference of circle given by radius.
