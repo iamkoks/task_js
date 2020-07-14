@@ -24,7 +24,7 @@
 
 const getRectangleArea = (width, height) => width * height
 
-console.log(getRectangleArea(5, 10))
+console.log(getRectangleArea(5, 5))
 
 /**
  * Returns a circumference of circle given by radius.
@@ -37,8 +37,9 @@ console.log(getRectangleArea(5, 10))
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCicleCircumference(radius) {
-}
+const Radius = (radius) => 2 * Math.PI * radius
+
+console.log(Radius(5))
 
 /**
  * Returns an average of two given numbers.
