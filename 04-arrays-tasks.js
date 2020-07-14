@@ -38,7 +38,18 @@ console.log(findElement(['Ace', 10, true], 10))
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
+   const arr = new Array(len);
+   let number = 1;
+   for (let i = 0; i < len; i++)
+   {
+      arr[i] = number;
+      number+=2
+   }
+
+   return arr;
 }
+
+console.log(generateOdds(10))
 
 
 /**
