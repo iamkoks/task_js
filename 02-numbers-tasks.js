@@ -168,7 +168,7 @@ console.log(getParallelipidedDiagonal(1, 1, 1))
  * @param {number} num
  * @param {number} pow
  * @return {number}
- *  
+ *
  * @example:
  *   1234, 0  => 1234
  *   1234, 1  => 1230
@@ -179,9 +179,9 @@ console.log(getParallelipidedDiagonal(1, 1, 1))
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(num, pow) {
-}
+const roundToPowerOfTen = (num, pow) => num - (num % Math.pow(10, pow))
 
+console.log(roundToPowerOfTen(1234, 3))
 /**
  * Returns true is the number is prime; otherwise false.
  * See: https://en.wikipedia.org/wiki/Primality_test
