@@ -110,8 +110,9 @@ console.log(getLinearEquationRoot(undefined, 8))
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(x1, y1, x2, y2) {
-}
+const getAngleBetweenVectors = (x1, y1, x2, y2) => Math.acos(x1 * x2 + y1 * y2 - (Math.sqrt(x1 * y1) + Math.sqrt(x2 *y2)))
+
+console.log(getAngleBetweenVectors(0, 1, 0, 1))
 
 /**
  * Returns a last digit of a integer number.
