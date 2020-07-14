@@ -53,8 +53,9 @@ console.log(Radius(5))
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(value1, value2) {
-}
+const getAverage = (value1, value2) => (value1 + value2) / 2
+
+console.log(getAverage(5, 0))
 
 /**
  * Returns a distance beetween two points by cartesian coordinates.
