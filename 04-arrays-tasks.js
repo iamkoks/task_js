@@ -78,7 +78,12 @@ console.log(doubleArray([0, 1, 2, 3, 4, 5]))
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
+   let result;
+   arr.map(index => index > 0 ? result.push(index): false)
+   return result
 }
+
+console.log(getArrayOfPositives([-1, 2, -5, -4, 0]))
 
 /**
  * Returns the array with strings only in the specified array (in original order)
@@ -579,4 +584,4 @@ module.exports = {
    getElementByIndexes: getElementByIndexes,
    swapHeadAndTail: swapHeadAndTail
 };
-}
+
