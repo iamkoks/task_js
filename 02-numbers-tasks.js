@@ -126,9 +126,9 @@ console.log(getAngleBetweenVectors(0, 1, 0, 1))
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(value) {
-}
+const getLastDigit = (value) => value % 10
 
+console.log(getLastDigit(37))
 
 /**
  * Returns a number by given string representation.
