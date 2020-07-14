@@ -88,8 +88,9 @@ console.log(getDistanceBetweenPoints(-5, 0, 10, -10))
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(a, b) {
-}
+const getLinearEquationRoot = (a = 1, b = 0) => -b / a
+
+console.log(getLinearEquationRoot(undefined, 8))
 
 
 /**
@@ -109,8 +110,9 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(x1, y1, x2, y2) {
-}
+const getAngleBetweenVectors = (x1, y1, x2, y2) => Math.acos(x1 * x2 + y1 * y2 - (Math.sqrt(x1 * y1) + Math.sqrt(x2 *y2)))
+
+console.log(getAngleBetweenVectors(0, 1, 0, 1))
 
 /**
  * Returns a last digit of a integer number.
@@ -124,9 +126,9 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(value) {
-}
+const getLastDigit = (value) => value % 10
 
+console.log(getLastDigit(37))
 
 /**
  * Returns a number by given string representation.
@@ -139,8 +141,9 @@ function getLastDigit(value) {
  *     '37'     => 37
  * '-525.5'     => -525.5
  */
-function parseNumberFromString(value) {
-}
+const parseNumberFromString = (value) => +value
+
+console.log(parseNumberFromString('100'))
 
 /**
  * Returns a diagonal length of the rectangular parallelepiped given by its sides a,b,c.
@@ -155,8 +158,9 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelipidedDiagonal(a, b, c) {
-}
+const getParallelipidedDiagonal = (a, b, c) => Math.sqrt(a ** 2 + b ** 2 + c ** 2)
+
+console.log(getParallelipidedDiagonal(1, 1, 1))
 
 /**
  * Returns the number rounded to specified power of 10.
@@ -164,7 +168,7 @@ function getParallelipidedDiagonal(a, b, c) {
  * @param {number} num
  * @param {number} pow
  * @return {number}
- *  
+ *
  * @example:
  *   1234, 0  => 1234
  *   1234, 1  => 1230
@@ -175,8 +179,9 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(num, pow) {
-}
+const roundToPowerOfTen = (num, pow) => num - (num % Math.pow(10, pow))
+
+console.log(roundToPowerOfTen(1234, 3))
 
 /**
  * Returns true is the number is prime; otherwise false.
@@ -184,7 +189,7 @@ function roundToPowerOfTen(num, pow) {
  *
  * @param {number} n
  * @return {bool}
- * 
+ *
  * @example:
  *   4 => false
  *   5 => true
@@ -196,7 +201,14 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
+    for (let i = 2;  i < n; i++){
+        if (n % i == 0)
+            return false
+    }
+    return true
 }
+
+console.log(isPrime(211))
 
 /**
  * Tries to convert value to number and returns it if conversion was successfull;
@@ -214,7 +226,15 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
+    if (+value){
+        return +value
+    }
+    else {
+        return def
+    }
 }
+
+console.log(toNumber('test', 0))
 
 module.exports = {
     getRectangleArea: getRectangleArea,
