@@ -88,8 +88,9 @@ console.log(getDistanceBetweenPoints(-5, 0, 10, -10))
  *   x + 8 = 0       => -8
  *   5*x = 0         => 0
  */
-function getLinearEquationRoot(a, b) {
-}
+const getLinearEquationRoot = (a = 1, b = 0) => -b / a
+
+console.log(getLinearEquationRoot(undefined, 8))
 
 
 /**
