@@ -37,7 +37,7 @@ console.log(findElement(['Ace', 10, true], 10))
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(len) {
+const generateOdds = (len) => {
    const arr = new Array(len);
    let number = 1;
    for (let i = 0; i < len; i++)
@@ -57,14 +57,14 @@ console.log(generateOdds(10))
  *
  * @param {array} arr
  * @return {array}
- * 
+ *
  * @example
  *    ['Ace', 10, true]  => ['Ace', 10, true,   'Ace', 10, true]  
  *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
  *    [] => [] 
  */
-function doubleArray(arr) {
-
+const doubleArray = (arr) => arr.concat(arr)
+console.log(doubleArray([0, 1, 2, 3, 4, 5]))
 
 /**
  * Returns an array of positive numbers from the specified array in original order
