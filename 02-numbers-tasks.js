@@ -226,7 +226,15 @@ console.log(isPrime(211))
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
+    if (+value){
+        return +value
+    }
+    else {
+        return def
+    }
 }
+
+console.log(toNumber('test', 0))
 
 module.exports = {
     getRectangleArea: getRectangleArea,
