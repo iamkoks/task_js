@@ -21,8 +21,12 @@
  *    'Tue, 26 Jan 2016 13:48:02 GMT' => Date()
  *    'Sun, 17 May 1998 03:00:00 GMT+01' => Date()
  */
-function parseDataFromRfc2822(value) {
+const parseDataFromRfc2822 = (value) => {
+   let date = new Date(value)
+   return date
 }
+
+console.log(parseDataFromRfc2822('December 17, 1995 03:24:00'))
 
 /**
  * Parses an ISO 8601 string date representation into date value
@@ -36,7 +40,11 @@ function parseDataFromRfc2822(value) {
  *    '2016-01-19T08:07:37Z' => Date()
  */
 function parseDataFromIso8601(value) {
+   let date = new Date(value)
+   return date
 }
+
+console.log(parseDataFromIso8601('2016-01-19T08:07:37Z'))
 
 
 /**
