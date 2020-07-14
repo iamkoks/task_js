@@ -72,8 +72,9 @@ console.log(getAverage(5, 0))
  *   (0,0) (1,0)    => 1
  *   (-5,0) (10,-10) => 18.027756377319946
  */
-function getDistanceBetweenPoints(x1, y1, x2, y2) {
-}
+const getDistanceBetweenPoints = (x1, y1, x2, y2) => Math.sqrt((x2-x1) ** 2+(y2-y1) ** 2)
+
+console.log(getDistanceBetweenPoints(-5, 0, 10, -10))
 
 /**
  * Returns a root of linear equation a*x + b = 0 given by coefficients a and b.
