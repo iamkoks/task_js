@@ -167,8 +167,13 @@ console.log(getStringsLength([ 'angular', 'react', 'ember' ]))
  *    [ 1, 3, 4, 5 ], 2, 1  => [ 1, 2, 3, 4, 5 ]
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
-function insertItem(arr, item, index) {
+const insertItem = (arr, item, index) =>{
+   arr.splice(item, index)
+   return arr
 }
+
+console.log(insertItem([ 1, 3, 4, 5 ], 2, 1))
+
 
 /**
  * Returns the n first items of the specified array
@@ -180,9 +185,11 @@ function insertItem(arr, item, index) {
  *    [ 1, 3, 4, 5 ], 2  => [ 1, 2 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'a', 'b', 'c' ]
  */
-function getHead(arr, n) {
+const getHead = (arr, n) => {
+   let result = arr.splice(0, n)
+   return result
 }
-
+console.log(getHead([ 'a', 'b', 'c', 'd'], 3))
 
 /**
  * Returns the n last items of the specified array
