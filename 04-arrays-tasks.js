@@ -168,7 +168,7 @@ console.log(getStringsLength([ 'angular', 'react', 'ember' ]))
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
 const insertItem = (arr, item, index) =>{
-   arr.splice(item, index)
+   arr.splice(index, 0, item )
    return arr
 }
 
@@ -202,9 +202,11 @@ console.log(getHead([ 'a', 'b', 'c', 'd'], 3))
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
 function getTail(arr, n) {
+   let result = arr.splice(-n, n)
+   return result
 }
 
-
+console.log(getTail([ 'a', 'b', 'c', 'd'], 3))
 /**
  * Returns CSV represebtation of two-dimentional numeric array.
  * https://en.wikipedia.org/wiki/Comma-separated_values
@@ -225,8 +227,15 @@ function getTail(arr, n) {
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-function toCsvText(arr) {
-}
+const toCsvText = (arr) => (arr.map(item => item.toLocaleString()+'\n')).toLocaleString()
+
+console.log(toCsvText(
+   [
+         [  0, 1, 2, 3, 4 ],
+         [ 10,11,12,13,14 ],
+         [ 20,21,22,23,24 ],
+         [ 30,31,32,33,34 ]
+   ]))
 
 /**
  * Transforms the numeric array into the according array of squares:
