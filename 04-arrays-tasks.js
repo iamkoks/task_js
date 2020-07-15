@@ -77,7 +77,7 @@ console.log(doubleArray([0, 1, 2, 3, 4, 5]))
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => [] 
  */
-function getArrayOfPositives(arr) {
+const getArrayOfPositives = (arr) => {
    let result = [];
    arr.map(index => index > 0
       ? result.push(index): false)
@@ -97,8 +97,14 @@ console.log(getArrayOfPositives([-1, 2, -5, -4, 0]))
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccon' ] => [ 'cat', 'dog', 'racoon' ]
  */
-function getArrayOfStrings(arr) {
+const getArrayOfStrings = (arr) => {
+   let result = [];
+   arr.map(index => typeof index == 'string'
+      ? result.push(index): false)
+   return result
 }
+
+console.log(getArrayOfStrings([ 0, 1, 'cat', 3, true, 'dog' ]))
 
 /**
  * Removes falsy values from the specified array
@@ -113,8 +119,14 @@ function getArrayOfStrings(arr) {
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
-function removeFalsyValues(arr) {
+const removeFalsyValues = (arr) => {
+   let result = [];
+   arr.map(index => Boolean(index) == true
+      ? result.push(index): false)
+   return result
 }
+
+console.log(removeFalsyValues([ false, 0, NaN, '', undefined ]))
 
 /**
  * Returns the array of useprcase strings from the specified array
