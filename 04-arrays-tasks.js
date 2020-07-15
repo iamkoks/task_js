@@ -534,9 +534,19 @@ console.log(sortCitiesArray(
  *           [0,0,0,1,0],
  *           [0,0,0,0,1]]   
  */
-function getIdentityMatrix(n) {
+const getIdentityMatrix = (n) => {
+   let result = new Array(n);
+   result.fill(0)
+   return result.map((item, index) => {
+      let strArr = new Array(n);
+      strArr.fill(0)
+      strArr[index] = 1
+      item = strArr
+      return item
+   })
 }
 
+console.log(getIdentityMatrix(3))
 /**
  * Creates an array of integers from the specified start to end (inclusive)
  * 
@@ -550,9 +560,17 @@ function getIdentityMatrix(n) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(start, end) {
-}
+const getIntervalArray = (start, end) => {
+   let result = new Array(end - start + 1)
+   result.fill(0)
+   return result.map(item => {
+      item = start
+      start++
+      return item
+   })
 
+}
+console.log(getIntervalArray(1, 5))
 /**
  * Returns array containing only unique values from the specified array.
  *
