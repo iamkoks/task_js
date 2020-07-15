@@ -359,8 +359,16 @@ console.log(get3TopItems([ 1,2,3,4,5 ]))
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(arr) {
+const getPositivesCount = (arr) => {
+   let result = 0
+   arr.map(item => {
+      typeof item == 'number' && item > 0 ?
+         result++ : false
+   })
+   return result
 }
+
+console.log(getPositivesCount([null, 1, 'elephant']))
 
 /** 
  * Sorts digit names
@@ -375,8 +383,12 @@ function getPositivesCount(arr) {
  *   [ 'nine','eight','nine','eight'] => [ 'eight','eight','nine','nine']
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(arr) {
+const sortDigitNamesByNumericOrder = (arr) => {
+   let alphabet = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+   return arr.sort((a, b) => alphabet.indexOf(a) - alphabet.indexOf(b))
 }
+
+console.log(sortDigitNamesByNumericOrder([ 'nine','eight','nine','eight']))
 
 /** 
  * Returns the sum of all items in the specified array of numbers
@@ -390,9 +402,9 @@ function sortDigitNamesByNumericOrder(arr) {
  *   [ -1, 1, -1, 1 ]      => 0
  *   [ 1, 10, 100, 1000 ]  => 1111
  */
-function getItemsSum(arr) {
-}
+const getItemsSum = (arr) => arr.reduce((sum, item) => sum + item)
 
+console.log(getItemsSum([ 1, 10, 100, 1000 ]))
 /** 
  * Returns the number of all falsy value in the specified array
  * 
@@ -406,8 +418,15 @@ function getItemsSum(arr) {
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
 function getFalsyValuesCount(arr) {
+   let sum = 0
+   arr.map((item) => {
+      Boolean(item) == false ?
+      sum ++ : false
+   })
+   return sum
 }
 
+console.log(getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]))
 /**
  * Returns a number of all occurences of the specified item in an array  
  * 
@@ -423,7 +442,15 @@ function getFalsyValuesCount(arr) {
  *    [ true, 0, 1, 'true' ], true => 1
  */
 function findAllOccurences(arr, item) {
+   let sum = 0
+   arr.map(index => {
+      index == item ?
+         sum++ : false
+   })
+   return sum
 }
+
+console.log(findAllOccurences([ 0, 0, 1, 1, 1, 2 ], 1))
 
 /**
  * Concatenates all elements from specified array into single string with ',' delimeter  
