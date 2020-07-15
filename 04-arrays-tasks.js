@@ -417,7 +417,7 @@ console.log(getItemsSum([ 1, 10, 100, 1000 ]))
  *  [ -1, 'false', null, 0 ] => 2
  *  [ null, undefined, NaN, false, 0, '' ]  => 6
  */
-function getFalsyValuesCount(arr) {
+const getFalsyValuesCount = (arr) => {
    let sum = 0
    arr.map((item) => {
       Boolean(item) == false ?
@@ -441,7 +441,7 @@ console.log(getFalsyValuesCount([ null, undefined, NaN, false, 0, '' ]))
  *    [ null, undefined, null ], null => 2 
  *    [ true, 0, 1, 'true' ], true => 1
  */
-function findAllOccurences(arr, item) {
+const findAllOccurences = (arr, item) => {
    let sum = 0
    arr.map(index => {
       index == item ?
@@ -463,10 +463,9 @@ console.log(findAllOccurences([ 0, 0, 1, 1, 1, 2 ], 1))
  *    [1, 2, 3, 4, 5]                   => '1,2,3,4,5'
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
-function toStringList(arr) {
-}
+const toStringList = (arr) => arr.join(',')
 
-
+console.log(toStringList([0, false, 'cat', NaN, true, '']))
 /**
  * Sorts the specified array by country name first and city name (if countries are equal) in ascending order.
  * 
@@ -491,10 +490,31 @@ function toStringList(arr) {
  *      { country: 'Russia',  city: 'Moscow' },
  *      { country: 'Russia',  city: 'Saint Petersburg' }
  */
-// function sortCitiesArray(arr) {
+const sortCitiesArray = (arr) => {
+   return arr.sort((a, b) => {
+      if (a.country > b.country)
+          return 1;
+      if (a.country < b.country)
+          return -1;
+      if (a.country == b.country) {
+          if (a.city > b.city)
+              return 1;
+          if (a.city < b.city)
+              return -1;
+          return 0;
+      }
+  });
+}
 
-//    throw new Error('Not implemented');
-// }
+console.log(sortCitiesArray(
+   [
+      { country: 'Russia',  city: 'Moscow' },
+      { country: 'Belarus', city: 'Minsk' },
+      { country: 'Poland',  city: 'Warsaw' },
+      { country: 'Russia',  city: 'Saint Petersburg' },
+      { country: 'Poland',  city: 'Krakow' },
+      { country: 'Belarus', city: 'Brest' }
+   ]))
 
 /**
  * Creates an indentity matrix of the specified size
