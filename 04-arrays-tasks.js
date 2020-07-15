@@ -295,10 +295,14 @@ console.log(getMovingSum([ 1, 1, 1, 1, 1 ]))
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(arr) {
+const getSecondItems = (arr) =>{
+   let result = []
+   arr.map((item, index) => index % 2 != 0 ?
+      result.push(item) : false)
+   return result
 }
 
-
+console.log(getSecondItems([ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ]))
 /**
  * Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, tree third items etc. 
@@ -313,9 +317,18 @@ function getSecondItems(arr) {
  *  [ 'a', 'b', 'c', null ] => [ 'a', 'b','b', 'c','c','c',  null,null,null,null ]
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
-function propagateItemsByPositionIndex(arr) {
+const propagateItemsByPositionIndex = (arr) => {
+   let result = []
+   arr.map((item, index) => {
+      let propagateArr = [];
+      propagateArr.length = index+1;
+      propagateArr.fill(item);
+      result.push(...propagateArr)
+   })
+   return result
 }
 
+console.log(propagateItemsByPositionIndex([ 1,2,3,4,5 ]))
 
 /** 
  * Returns the 3 largest numbers from the specified array
@@ -330,10 +343,9 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 1,2,3,4,5,6,7,8,9,10 ] => [ 10, 9, 8 ]
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
-function get3TopItems(arr) {
-}
+const get3TopItems = (arr) => (arr.splice(-3, 3)).reverse()
 
-
+console.log(get3TopItems([ 1,2,3,4,5 ]))
 /**  
  * Returns the number of positive numbers from specified array
  * 
