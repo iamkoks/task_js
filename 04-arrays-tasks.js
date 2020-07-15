@@ -138,9 +138,9 @@ console.log(removeFalsyValues([ false, 0, NaN, '', undefined ]))
  *    [ 'permanent-internship', 'glutinous-shriek', 'multiplicative-elevation' ] => [ 'PERMANENT-INTERNSHIP', 'GLUTINOUS-SHRIEK', 'MULTIPLICATIVE-ELEVATION' ]
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
-function getUpperCaseStrings(arr) {
-}
+const getUpperCaseStrings = (arr) => arr.map(index => index.toUpperCase())
 
+console.log(getUpperCaseStrings([ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]))
 
 /**
  * Returns the array of string lengths from the specified string array.
@@ -152,8 +152,9 @@ function getUpperCaseStrings(arr) {
  *    [ '', 'a', 'bc', 'def', 'ghij' ]  => [ 0, 1, 2, 3, 4 ]
  *    [ 'angular', 'react', 'ember' ] => [ 7, 5, 5 ]
  */
-function getStringsLength(arr) {
-}
+const getStringsLength = (arr) => arr.map(index => index.length)
+
+console.log(getStringsLength([ 'angular', 'react', 'ember' ]))
 
 /**
  * Inserts the item into specified array at specified index
