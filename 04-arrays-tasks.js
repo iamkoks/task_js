@@ -583,8 +583,15 @@ console.log(getIntervalArray(1, 5))
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
+   let result = [];
+   arr.filter(item => {
+       if (result.indexOf(item) == -1)
+           result.push(item);
+   });
+   return result;
 }
 
+console.log(distinct([ 1, 2, 3, 3, 2, 1 ]))
 /**
  * Groups elements of the specified array by key.
  * Returns multimap of keys extracted from array elements via keySelector callback
@@ -631,8 +638,13 @@ function group(array, keySelector, valueSelector) {
  *   ['one','two','three'], x=>x.split('')  =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
 function selectMany(arr, childrenSelector) {
+   let result = [];
+   arr.map(item => {
+       result.push(...childrenSelector(item));
+   });
+   return result;
 }
-
+console.log(selectMany([[1, 2], [3, 4], [5, 6]], (x) => x))
 
 // /**
 //  * Returns an element from the multidimentional array by the specified indexes.
@@ -647,7 +659,7 @@ function selectMany(arr, childrenSelector) {
 //  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
 //  */
 function getElementByIndexes(arr, indexes) {
-   throw new Error('Not implemented');
+   return indexes.reduce((array, item) => array[item], arr);
 }
 
 
