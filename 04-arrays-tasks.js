@@ -248,9 +248,9 @@ console.log(toCsvText(
  *   [ 0, 1, 2, 3, 4, 5 ] => [ 0, 1, 4, 9, 16, 25 ]
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
-function toArrayOfSquares(arr) {
-}
+const toArrayOfSquares = (arr) => arr.map(item => item * item)
 
+console.log(toArrayOfSquares([ 0, 1, 2, 3, 4, 5 ]))
 
 /**
  * Transforms the numeric array to the according moving sum array:
@@ -266,8 +266,23 @@ function toArrayOfSquares(arr) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0] 
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(arr) {
+const getMovingSum = (arr) => {
+   let previousItem
+   return arr.map((item, index) => {
+      if (index == 0){
+      previousItem = item
+      return previousItem
+      }
+      else {
+         item = item + previousItem
+         previousItem = item
+         return item
+      }
+   })
 }
+
+console.log(getMovingSum([ 1, 1, 1, 1, 1 ]))
+
 
 /**
  * Returns every second item from the specified array:
