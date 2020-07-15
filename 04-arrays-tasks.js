@@ -78,8 +78,9 @@ console.log(doubleArray([0, 1, 2, 3, 4, 5]))
  *    [] => [] 
  */
 function getArrayOfPositives(arr) {
-   let result;
-   arr.map(index => index > 0 ? result.push(index): false)
+   let result = [];
+   arr.map(index => index > 0
+      ? result.push(index): false)
    return result
 }
 
