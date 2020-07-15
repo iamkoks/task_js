@@ -58,8 +58,9 @@ console.log(getFizzBuzz(20))
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(n) {
-}
+const getFactorial = (n) => (n != 1) ? n * getFactorial(n - 1) : 1
+
+console.log(getFactorial(5))
 
 
 /**
