@@ -29,8 +29,22 @@
  *  21 => 'Fizz'
  *
  */
-function getFizzBuzz(num) {
+const getFizzBuzz = (num) => {
+    if(num % 15 == 0) {
+        return 'FizzBuzz'
+    }
+    else if(num % 5 == 0) {
+        return 'Buzz'
+    }
+    else if(num % 3 == 0) {
+        return 'Fizz'
+    }
+    else {
+        return num
+    }
 }
+
+console.log(getFizzBuzz(20))
 
 
 /**
@@ -44,8 +58,9 @@ function getFizzBuzz(num) {
  *   5  => 120
  *   10 => 3628800
  */
-function getFactorial(n) {
-}
+const getFactorial = (n) => (n != 1) ? n * getFactorial(n - 1) : 1
+
+console.log(getFactorial(5))
 
 
 /**
